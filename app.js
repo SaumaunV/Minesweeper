@@ -19,13 +19,6 @@ let minute;
 let seconds;
 let time;
 
-// //add header
-// const header = document.querySelector("#header");
-// header.appendChild(bombCounter);
-// header.appendChild(restartButton);
-// header.appendChild(timer);
-//header.setAttribute("id", "header");
-
 //add counter
 const bombCounter = document.createElement("div");
 bombCounter.setAttribute("id", "counter");
@@ -153,12 +146,6 @@ function randomNumber(size) {
   return Math.floor(Math.random() * size);
 }
 
-// header.appendChild(bombCounter);
-// header.appendChild(restartButton);
-// header.appendChild(timer);
-
-//grid.style.setProperty("--size", WIDTH);
-
 function addBoard(board) {
   board.forEach((row) => {
     row.forEach((tile) => {
@@ -236,77 +223,17 @@ function nearbyTiles(board, { x, y }) {
   return tiles;
 }
 
-// function checkSquare(square, currentID) {
-//   const leftEdge = currentID % width === 0;
-//   const rightEdge = currentID % width === width - 1;
-//   setTimeout(() => {
-//     if (currentID > 0 && !leftEdge) {
-//       const newID = squares[parseInt(currentID) - 1].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID > 9 && !rightEdge) {
-//       const newID = squares[parseInt(currentID) + 1 - width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID > 9) {
-//       const newID = squares[parseInt(currentID) - width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID > 10 && !leftEdge) {
-//       const newID = squares[parseInt(currentID) - 1 - width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID < 99 && !rightEdge) {
-//       const newID = squares[parseInt(currentID) + 1].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID < 90 && !leftEdge) {
-//       const newID = squares[parseInt(currentID) - 1 + width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID < 89 && !rightEdge) {
-//       const newID = squares[parseInt(currentID) + 1 + width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//     if (currentID < 90) {
-//       const newID = squares[parseInt(currentID) + width].id;
-//       const newSquare = document.getElementById(newID);
-//       click(newSquare);
-//     }
-//   }, 10);
-// }
-
 function gameOver(board) {
   GameOver = true;
   board.forEach((row) => {
     row.forEach((tile) => {
       if (tile.mine) {
         tile.element.innerHTML = "💥";
-        //click(board, tile);
       }
     });
   });
   stopTimer();
 }
-
-// function gameOver() {
-//   GameOver = true;
-//   squares.forEach((square) => {
-//     if (square.classList.contains("bomb")) {
-//       //square.innerHTML = '💣';
-//       square.innerHTML = "💥";
-//       square.classList.add("checked");
-//     }
-//   });
-//   stopTimer();
-// }
 
 function checkWin(board) {
   if (openedTiles === WIDTH * WIDTH - BOMB_COUNT) {

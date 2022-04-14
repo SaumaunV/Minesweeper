@@ -11,20 +11,10 @@ body {
   position: absolute;
 }
 
-/*.board{
-    height: 460px;
-    width: 400px;
-}*/
-
 .grid {
-  /*margin: 50px;*/
-  /*height: 460px;*/
-  /*width: 400px;*/
   display: inline-grid;
   grid-template-columns: repeat(var(--size), 40px);
   grid-template-rows: repeat(var(--size), 40px);
-  /*flex-wrap: wrap;*/
-  /*gap: 1px;*/
   background-color: lightgray;
 }
 
@@ -50,15 +40,6 @@ body {
   font-size: 1.25rem;
   font-family: sans-serif;
 }
-
-/*div.tile{
-    line-height: 40px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-    font-family: sans-serif;
-}*/
 
 .board div#header {
   display: flex;
