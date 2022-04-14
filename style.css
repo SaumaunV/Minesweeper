@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(117, 117, 117);
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+/*.board{
+    height: 460px;
+    width: 400px;
+}*/
+
+.grid {
+  /*margin: 50px;*/
+  /*height: 460px;*/
+  /*width: 400px;*/
+  display: inline-grid;
+  grid-template-columns: repeat(var(--size), 40px);
+  grid-template-rows: repeat(var(--size), 40px);
+  /*flex-wrap: wrap;*/
+  /*gap: 1px;*/
+  background-color: lightgray;
+}
+
+.grid > [data-status="number"] {
+  height: 38px !important;
+  width: 38px !important;
+  border: 1px solid rgb(151, 151, 151) !important;
+  font-size: 2rem !important;
+  background-color: lightgray;
+}
+
+.grid div.tile {
+  display: flex;
+  height: 34px;
+  width: 34px;
+  border: 3px outset white;
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-family: sans-serif;
+}
+
+/*div.tile{
+    line-height: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+}*/
+
+.board div#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  width: 392px;
+  border: 4px inset white;
+  background-color: lightgray;
+  user-select: none;
+}
+
+#counter {
+  display: inline-block;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: red;
+  background-color: black;
+}
+
+.timer {
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: red;
+  background-color: black;
+}
+
+.valid,
+.bomb {
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+.explode {
+  background-color: red;
+}
+
+.grid > [data-number="1"] {
+  color: blue;
+}
+
+.grid > [data-number="2"] {
+  color: green;
+}
+
+.grid > [data-number="3"] {
+  color: red;
+}
+
+.grid > [data-number="4"] {
+  color: darkblue;
+}
+
+.grid > [data-number="5"] {
+  color: darkred;
+}
+
+.grid > [data-number="6"] {
+  color: teal;
+}
+
+.grid > [data-number="7"] {
+  color: purple;
+}
